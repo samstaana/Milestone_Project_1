@@ -118,7 +118,113 @@ let questions = [
       choiceC: "Louis C.K.",
       choiceD: "Ricky Gervis",
       correct: "A"
+    },
+    {
+      question: "Who does Erin not date?",
+      choiceA: "Pete Miller",
+      choiceB: "Ryan Howard",
+      choiceC: "Andy Bernard",
+      choiceD: "Gabe Lewis",
+      correct: "B"
+    },
+    {
+      question: "What nickname does Andy give Jim?",
+      choiceA: "Big Tuna",
+      choiceB: "Big Shot",
+      choiceC: "Big Guy",
+      choiceD: "Big Jim",
+      correct: "A"
+    },
+    {
+      question: "When Michael and Holly do their skit at the company picnic, Michael accidentally lesks that a branch is closing.  Which branch was it?",
+      choiceA: "Scanton",
+      choiceB: "Akron",
+      choiceC: "Nashua",
+      choiceD: "Buffalo",
+      correct: "D"
+    },
+    {
+      question: "What does Pam steal from the office is season one?",
+      choiceA: "Pens",
+      choiceB: "Post-its",
+      choiceC: "Scissors",
+      choiceD: "Paper",
+      correct: "B"
+    },
+    {
+      question: "When Michael burns his foot on a George Foreman grill, what does he want Pam to rub on it?",
+      choiceA: "Ice Cream",
+      choiceB: "Coconut Oil",
+      choiceC: "Country Crock Butter",
+      choiceD: "Peanut Butter",
+      correct: "C"
+    },
+    {
+      question: "What's Phyllis's maiden name?",
+      choiceA: "Vanse",
+      choiceB: "Scott",
+      choiceC: "Lapin",
+      choiceD: "Lupin",
+      correct: "C"
+    },
+    {
+      question: "What did Kevin buy for himself when he got himself for Secret Santa?",
+      choiceA: "An iPod",
+      choiceB: "A foot bath",
+      choiceC: "A foot massager",
+      choiceD: "A back scratcher",
+      correct: "B"
+    },
+    {
+      question: "What is Stanley's wife's name?",
+      choiceA: "Teri",
+      choiceB: "Tracy",
+      choiceC: "Tricia",
+      choiceD: "Theresa",
+      correct: "A"
+    },
+    {
+      question: "What are the names of Pam Halpert and Jim's kids?",
+      choiceA: "Pammy and Jimmy",
+      choiceB: "Stacy and Phil",
+      choiceC: "Sam and Dean",
+      choiceD: "Cece and Phillip",
+      correct: "D"
+    },
+    {
+      question: "What was Ryan heating up in the toaster oven when he started a fire?",
+      choiceA: "A hot pocket",
+      choiceB: "A cheesy pita",
+      choiceC: "Top Ramen",
+      choiceD: "Cup-a-Noodle",
+      correct: "B"
+    },
+    {
+      question: "In the episode “Golden Ticket” who does Michael blame the eventuate discounts on?",
+      choiceA: "Ryan",
+      choiceB: "Jim",
+      choiceC: "Andy",
+      choiceD: "Dwight",
+      correct: "D"
+    },
+    {
+      question: "Who was the regional manager of the Stamford branch?",
+      choiceA: "Ed Truck",
+      choiceB: "Michael Scott",
+      choiceC: "Josh Porter",
+      choiceD: "Karen Filippelli",
+      correct: "C"
+    },
+    {
+      question: "What season did Michael leave The Office?",
+      choiceA: "Season 7",
+      choiceB: "Season 6",
+      choiceC: "Season 8",
+      choiceD: "Season 5",
+      correct: "A"
     }
+    
+
     
 ]
 
