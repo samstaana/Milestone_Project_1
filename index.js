@@ -223,12 +223,9 @@ let questions = [
       choiceD: "Season 5",
       correct: "A"
     }
-    
-
-    
 ]
 
-// variables
+// question variables
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
@@ -263,7 +260,7 @@ function startQuiz() {
 }
 
 // render progress
-renderProgress = () => {
+function renderProgress() {
     for(let index = 0; index <= lastQuestion; index++){
         progress.innerHTML += "<div class='prog' id="+ index +"></div>";
     }
@@ -317,7 +314,7 @@ function answerIsWrong() {
 }
 
 // score
-function scoreRender(){
+function scoreRender() {
     scoreDiv.style.display = "block";
 
     // percentage of correct answers
