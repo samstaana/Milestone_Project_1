@@ -118,28 +118,102 @@ let questions = [
       choiceC: "Louis C.K.",
       choiceD: "Ricky Gervis",
       correct: "A"
-    },
+    }
     
 ]
 
 // variables
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 0;
+const questionTime = 10;
+const gaugeWidth = 150;
+const gaugeUnit = gaugeWidth / questionTime;
+let TIMER;
+let score = 0;
+
+// render questions
+function renderQuestion() {
+    let q = questions[runningQuestion];
+    
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    qImg.innerHTML = "<img src='https://wallpaperaccess.com/full/1146177.jpg' width='640px' height='360px'>";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+    choiceD.innerHTML = q.choiceD;
+}
+
+start.addEventListener("click",startQuiz);
 
 // start quiz functions
+function startQuiz() {
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    renderProgress();
+    renderCounter();
+    TIMER = setInterval(renderCounter, 1000);
+}
 
 // render progress
+renderProgress = () => {
+    for(let index = 0; index <= lastQuestion; index++){
+        progress.innerHTML += "<div class='prog' id="+ index +"></div>";
+    }
+}
 
 // counter render
+function renderCounter() {
+    if(count <= questionTime){
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count++
+    }else{
+        count = 0;
+        answerIsWrong();
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }else{
+            clearInterval(TIMER);
+            scoreRender();
+        }
+    }
+}
 
 // check answers
+function checkAnswer(answer) {
+    if( answer == questions[runningQuestion].correct){
+        score++;
+        answerIsCorrect();
+    }else{
+        answerIsWrong();
+    }
+    count = 0;
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
 
 // if the answer is correct
+function answerIsCorrect() {
+    document.getElementById(runningQuestion).style.backgroundColor = "lightgreen";
+}
 
 // if the answer is wrong
+function answerIsWrong() {
+    document.getElementById(runningQuestion).style.backgroundColor = "red";
+}
 
 // score
 
 // percentage of correct answers
-
+ 
 // images for the final score tally
 
 // invoke the code
