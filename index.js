@@ -211,9 +211,20 @@ function answerIsWrong() {
 }
 
 // score
+function scoreRender(){
+    scoreDiv.style.display = "block";
 
-// percentage of correct answers
- 
-// images for the final score tally
+    // percentage of correct answers
+    const scorePerCent = Math.round(100 * score/questions.length);
 
-// invoke the code
+    // images for the final score tally
+    let img = (scorePerCent >= 80) ? "images/_5.png":
+            (scorePerCent >= 60) ? "images/_4.png" :
+            (scorePerCent >= 40) ? "images/_3.png" :
+            (scorePerCent >= 20) ? "images/_2.png" :
+            "images/_1.png";
+            
+    // invoke the code
+    scoreDiv.innerHTML = "<img src="+ img +">";
+    scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+}
