@@ -59,7 +59,7 @@ body{
 }
 
 #choices{
-    width : 480px;
+    width : 475px;
     position: absolute;
     right : 0;
     top : 175px;
@@ -67,7 +67,7 @@ body{
 }
 .choice{
     display: inline-block;
-    width: 220px;
+    width: 215px;
     height: 65px;
     text-align: center;
     border: 1px solid white;
