@@ -218,14 +218,14 @@ function scoreRender(){
     const scorePercentage = Math.round(100 * score/questions.length);
 
     // images for the final score tally
-    let img = (scorePercentage >= 80) ? "./images/_5.png":
+    let image = (scorePercentage >= 80) ? "./images/_5.png" :
             (scorePercentage >= 60) ? "./images/_4.png" :
             (scorePercentage >= 40) ? "./images/_3.png" :
             (scorePercentage >= 20) ? "./images/_2.png" :
             "./images/_1.png";
             
     // invoke the code
-    scoreDiv.innerHTML = "<img src="+ img +">";
+    scoreDiv.innerHTML = "<img src="+ image +">";
     scoreDiv.innerHTML += "<p>"+ scorePercentage+" %</p>";
 }
 
