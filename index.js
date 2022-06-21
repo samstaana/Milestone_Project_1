@@ -228,3 +228,8 @@ function scoreRender(){
     scoreDiv.innerHTML = "<img src="+ img +">";
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
 }
+
+function play() {
+var audio = new Audio ('https://www.televisiontunes.com/uploads/audio/The%20Office.mp3');
+audio.play();
+}
