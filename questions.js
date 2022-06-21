@@ -1,19 +1,5 @@
-// select elements
-const start = document.getElementById("start");
-const quiz = document.getElementById("quiz");
-const question = document.getElementById("question");
-const qImg = document.getElementById("qImg");
-const choiceA = document.getElementById("A");
-const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
-const choiceD = document.getElementById("D");
-const counter = document.getElementById("counter");
-const timeGauge = document.getElementById("timeGauge");
-const progress = document.getElementById("progress");
-const scoreDiv = document.getElementById("scoreContainer");
+//add questions
 
-
-// add questions
 let questions = [
     {
       question: "Where does Michael Scott move to start his new life with Holly?",
@@ -136,7 +122,7 @@ let questions = [
       correct: "A"
     },
     {
-      question: "When Michael and Holly do their skit at the company picnic, Michael accidentally leaks that a branch is closing.  Which branch was it?",
+      question: "When Michael and Holly do their skit at the company picnic, Michael accidentally lesks that a branch is closing.  Which branch was it?",
       choiceA: "Scanton",
       choiceB: "Akron",
       choiceC: "Nashua",
@@ -224,116 +210,3 @@ let questions = [
       correct: "A"
     }
 ]
-
-// question variables
-const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-let count = 0;
-const questionTime = 10;
-const gaugeWidth = 150;
-const gaugeUnit = gaugeWidth / questionTime;
-let TIMER;
-let score = 0;
-
-// render questions
-function renderQuestion() {
-    let q = questions[runningQuestion];
-    
-    question.innerHTML = "<p>"+ q.question +"</p>";
-    qImg.innerHTML = "<img src='https://wallpaperaccess.com/full/1146177.jpg' width='640px' height='360px'>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD;
-}
-
-start.addEventListener("click",startQuiz);
-
-// start quiz functions
-function startQuiz() {
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-    renderProgress();
-    renderCounter();
-    TIMER = setInterval(renderCounter, 1000);
-}
-
-// render progress
-function renderProgress() {
-    for(let index = 0; index <= lastQuestion; index++){
-        progress.innerHTML += "<div class='prog' id="+ index +"></div>";
-    }
-}
-
-// counter render
-function renderCounter() {
-    if(count <= questionTime){
-        counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeUnit + "px";
-        count++
-    }else{
-        count = 0;
-        answerIsWrong();
-        if(runningQuestion < lastQuestion){
-            runningQuestion++;
-            renderQuestion();
-        }else{
-            clearInterval(TIMER);
-            scoreRender();
-        }
-    }
-}
-
-// check answers
-function checkAnswer(answer) {
-    if( answer == questions[runningQuestion].correct){
-        score++;
-        answerIsCorrect();
-    }else{
-        answerIsWrong();
-    }
-    count = 0;
-    if(runningQuestion < lastQuestion){
-        runningQuestion++;
-        renderQuestion();
-    }else{
-        clearInterval(TIMER);
-        scoreRender();
-    }
-}
-
-// if the answer is correct
-function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "lightgreen";
-}
-
-// if the answer is wrong
-function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "red";
-}
-
-// score
-function scoreRender() {
-    scoreDiv.style.display = "block";
-
-    // percentage of correct answers
-    const scorePercentage = Math.round(100 * score/questions.length);
-
-    // images for the final score tally
-    let image = (scorePercentage >= 80) ? "./images/5.png" :
-            (scorePercentage >= 60) ? "./images/4.png" :
-            (scorePercentage >= 40) ? "./images/3.png" :
-            (scorePercentage >= 20) ? "./images/2.png" :
-            "./images/1.png";
-            
-    // invoke the code
-    scoreDiv.innerHTML = "<img src="+ image +">";
-    scoreDiv.innerHTML += "<p>"+ scorePercentage +"%</p>";
-}
-
-// add The Office theme song
-function play() {
-var audio = new Audio ('https://www.televisiontunes.com/uploads/audio/The%20Office.mp3');
-audio.play();
-}
