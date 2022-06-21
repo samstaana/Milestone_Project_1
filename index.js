@@ -218,15 +218,15 @@ function scoreRender(){
     const scorePercentage = Math.round(100 * score/questions.length);
 
     // images for the final score tally
-    let image = (scorePercentage >= 80) ? "./images/_5.png" :
-            (scorePercentage >= 60) ? "./images/_4.png" :
-            (scorePercentage >= 40) ? "./images/_3.png" :
-            (scorePercentage >= 20) ? "./images/_2.png" :
-            "./images/_1.png";
+    let image = (scorePercentage >= 80) ? "./images/5.png" :
+            (scorePercentage >= 60) ? "./images/4.png" :
+            (scorePercentage >= 40) ? "./images/3.png" :
+            (scorePercentage >= 20) ? "./images/2.png" :
+            "./images/1.png";
             
     // invoke the code
     scoreDiv.innerHTML = "<img src="+ image +">";
-    scoreDiv.innerHTML += "<p>"+ scorePercentage+" %</p>";
+    scoreDiv.innerHTML += "<p>"+ scorePercentage +"%</p>";
 }
 
 // add The Office theme song
